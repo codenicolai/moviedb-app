@@ -8,6 +8,7 @@ import {
   textAlign,
   display,
   fontStyle,
+  maxHeight,
 } from "styled-system";
 
 export const Text = styled.span`
@@ -16,6 +17,7 @@ export const Text = styled.span`
     text-decoration: none;
   }
   ${fontStyle}
+  ${maxHeight}
   ${display}
   ${fontSize}
   ${space};
@@ -43,7 +45,8 @@ export const Text = styled.span`
       cursor: pointer;
     `};
 
-  font-family: Lato-Regular;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  ${fontFamily};
 
   ${(props) =>
     props.onClick &&
