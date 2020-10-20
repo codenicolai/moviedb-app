@@ -8,12 +8,12 @@ const colors = {
   // topic
   red: "#FF001F",
   green: "#7CBC37",
-  yellow: "#F6A623",
-  blue: "#4990E2",
+  yellow: "#c39400",
+  blue: "#136CB2",
   purple: "#BD10E0",
 };
 
-const breakpoints = ["414px", "576px", "768px", "1024px", "1366px", "1920px"];
+const breakpoints = ["414px", "515px", "768px", "1024px", "1366px", "1920px"];
 
 breakpoints.base = breakpoints[0];
 breakpoints.mobile = breakpoints[1];
@@ -30,7 +30,7 @@ fontSizes.default = fontSizes[3];
 fontSizes.large = fontSizes[4];
 fontSizes.xlarge = fontSizes[5];
 
-const fontWeights = [300, 500, 700];
+const fontWeights = [300, 500, 700, 900];
 fontWeights.regular = fontWeights[0];
 fontWeights.medium = fontWeights[1];
 fontWeights.bold = fontWeights[2];
