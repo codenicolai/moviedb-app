@@ -1,9 +1,12 @@
 import React from "react";
 
+import { useHistory } from "react-router";
+
 import { Flex } from "components/Flex";
 import { Text } from "components/Text";
+import { Avatar } from "components/Avatar";
 
-import { useHistory } from "react-router";
+import logo from "assets/logo.svg";
 
 export const Navbar = () => {
   const history = useHistory();
@@ -20,15 +23,16 @@ export const Navbar = () => {
       bg="white"
       borderBottom="1px solid lightGray"
     >
-      <Flex px={10} alignItems="center" justifyContent="space-between" flex={2}>
+      <Flex px={10} alignItems="center" flex={2}>
         <Text
           onClick={() => history.push("/home")}
           fontSize="large"
           color="black"
           textTransform="uppercase"
-          fontWeight={2}
+          fontWeight={1}
+          fontFamily=""
         >
-          HOME
+          <Avatar img={logo} height="45px" width="45px" />
         </Text>
       </Flex>
     </Flex>
