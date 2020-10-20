@@ -20,7 +20,7 @@ export const Movie = () => {
   const theme = useTheme();
   const history = useHistory();
 
-  const { data: item, isLoading } = useQuery("movieById", () =>
+  const { data: movie, isLoading } = useQuery("movieById", () =>
     getMovieById(id)
   );
 
@@ -47,7 +47,7 @@ export const Movie = () => {
         </Text>
       </Flex>
       <Flex justifyContent="center" width="100%">
-        <Image img={`http://image.tmdb.org/t/p/w780${item.poster_path}`} />
+        <Image img={`http://image.tmdb.org/t/p/w780${movie.poster_path}`} />
       </Flex>
 
       <Flex
@@ -57,21 +57,21 @@ export const Movie = () => {
         justifyContent="flex-start"
       >
         <Text fontSize="large" fontWeight={3}>
-          {item.title}
+          {movie.title}
           <Text ml={2} color="gray" fontWeight={1}>
-            {`(${moment(item.release_date, "YYYY-MM-DD").format("YYYY")})`}
+            {`(${moment(movie.release_date, "YYYY-MM-DD").format("YYYY")})`}
           </Text>
         </Text>
         <Flex alignItems="center" mt={4}>
           <AiFillStar color={theme.colors.yellow} size={25} />
           <Text ml={3} fontSize="large">
-            {item.vote_average}
+            {movie.vote_average}
           </Text>
         </Flex>
 
         <Flex mt={5} width="100%" maxHeight={200} overflow="hidden">
           <Text textAlign="justify" fontSize="large">
-            {item.overview}
+            {movie.overview}
           </Text>
         </Flex>
       </Flex>
