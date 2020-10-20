@@ -6,6 +6,7 @@ import { Flex } from "components/Flex";
 import { Navbar } from "components/Navbar";
 
 import { Home } from "pages/admin/Home";
+import { Movie } from "pages/admin/Movie";
 
 export const Admin = () => {
   return (
@@ -21,6 +22,9 @@ export const Admin = () => {
           <Switch>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/movie/:id">
+              <Movie />
             </Route>
             <Redirect to="/home" />
           </Switch>
