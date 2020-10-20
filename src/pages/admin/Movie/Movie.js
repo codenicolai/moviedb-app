@@ -9,6 +9,7 @@ import { useQuery } from "react-query";
 import { getMovieById } from "api/movies";
 
 import { Flex } from "components/Flex";
+import { Box } from "components/Box";
 import { Loading } from "components/Loading";
 import { Image } from "components/Image";
 import { Text } from "components/Text";
@@ -74,6 +75,35 @@ export const Movie = () => {
             {movie.overview}
           </Text>
         </Flex>
+      </Flex>
+
+      <Flex mt={4}>
+        <Text fontWeight={2}>Companies:</Text>
+        <Box ml={3} display="inline-block">
+          {movie.production_companies.map((company, i) => (
+            <Text>{i !== 0 ? `, ${company.name}` : company.name}</Text>
+          ))}
+        </Box>
+      </Flex>
+      <Flex mt={2}>
+        <Text fontWeight={2}>Genres:</Text>
+        <Box ml={3} display="inline-block">
+          {movie.genres.map((genre, i) => (
+            <Text>{i !== 0 ? `, ${genre.name}` : genre.name}</Text>
+          ))}
+        </Box>
+      </Flex>
+      <Flex mt={3} alignItems="center">
+        <Text fontSize="small" color="gray">
+          Votes: {movie?.vote_count}
+        </Text>
+        <Text ml={5} fontSize="small" color="gray">
+          Popularity: {movie?.popularity}
+        </Text>
+        <Text ml={5} fontSize="small" color="gray">
+          Budget: $
+          {movie?.budget.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
+        </Text>
       </Flex>
     </Flex>
   );
